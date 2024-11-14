@@ -51,8 +51,8 @@ class RegularExpressionPatternRule implements Rule
 		if (!$staticCall->class instanceof Node\Name || !$staticCall->name instanceof Node\Identifier) {
 			return [];
 		}
-		$className = $scope->resolveName($staticCall->class);
-		if ($className !== Strings::class) {
+		$caller = $scope->resolveTypeByName($staticCall->class);
+		if ($caller->getClassReflection() === null || !$caller->getClassReflection()->is(Strings::class)) {
 			return [];
 		}
 		$methodName = strtolower((string) $staticCall->name);

@@ -71,6 +71,10 @@ class RegularExpressionPatternRuleTest extends RuleTestCase
 					'Regex pattern is invalid: Compilation failed: missing closing parenthesis at offset 1 in pattern: ~(~',
 					26,
 				],
+				[
+					'Regex pattern is invalid: Delimiter must not be alphanumeric, backslash, or NUL in pattern: nok',
+					36,
+				],
 			],
 		);
 	}
