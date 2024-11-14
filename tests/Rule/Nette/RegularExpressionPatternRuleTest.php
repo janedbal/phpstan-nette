@@ -72,7 +72,7 @@ class RegularExpressionPatternRuleTest extends RuleTestCase
 					26,
 				],
 				[
-					'Regex pattern is invalid: Delimiter must not be alphanumeric, backslash, or NUL in pattern: nok',
+					sprintf('Regex pattern is invalid: Delimiter must not be %s in pattern: nok', $messagePart),
 					36,
 				],
 			],
